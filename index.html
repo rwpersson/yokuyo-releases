@@ -50,6 +50,15 @@
     footer p{font-size:13px;color:var(--muted);margin-bottom:6px}
     .credits{font-size:12px}
 
+    ol.steps { counter-reset: step; list-style: none; padding: 0; max-width: 640px; margin: 0 auto; text-align: left; }
+    ol.steps li { position: relative; padding: 12px 0 12px 46px; border-bottom: 1px solid var(--border); font-size: 15px; line-height: 1.55; }
+    ol.steps li:last-child { border-bottom: none; }
+    ol.steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 11px;
+      width: 28px; height: 28px; border-radius: 50%; background: var(--vermillion); color: #fff;
+      display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; }
+    .note { color: var(--muted); }
+    .req { text-align: center; font-size: 13px; color: var(--muted); margin-top: 18px; }
+
     @media(max-width:640px){
       h1{font-size:42px} h1 .jp{font-size:30px}
       .grid{grid-template-columns:1fr}
@@ -74,6 +83,19 @@
       </div>
     </div>
   </header>
+
+  <section>
+    <div class="wrap">
+      <h2>Getting started</h2>
+      <ol class="steps">
+        <li><strong>Download &amp; run the installer.</strong> Windows may warn it's from an “unknown publisher” — click <strong>More info → Run anyway</strong>. <span class="note">(Yokuyo isn't code-signed yet; the installer and source are open to inspect.)</span></li>
+        <li><strong>Let it set up the speech engine.</strong> Yokuyo uses <a href="https://voicevox.hiroshiba.jp" target="_blank" rel="noreferrer">VOICEVOX</a> (free) for audio and pitch. It's detected and started for you automatically — if it isn't installed, Yokuyo opens the download page and picks it up once installed, no restart needed.</li>
+        <li><strong>Analyze.</strong> Type or paste a Japanese sentence and press <strong>Analyze</strong> to see its pitch contour, hear it, and explore the rules.</li>
+        <li><strong>Optional — add the browser extension.</strong> Use Yokuyo while you read: hold <kbd>Shift</kbd> and hover Japanese text on any page. It works while the desktop app is running.</li>
+      </ol>
+      <p class="req">Windows 10 / 11 · No audio? Make sure VOICEVOX is running (Yokuyo starts it for you).</p>
+    </div>
+  </section>
 
   <section>
     <div class="wrap">
